@@ -30,7 +30,7 @@ import {
   updateFileUsers,
 } from "@/lib/actions/file.actions";
 import { usePathname } from "next/navigation";
-import { FileDetails } from "./ActionModalContent";
+import { FileDetails, ShareInput } from "./ActionModalContent";
 
 const ActionDropdown = ({ file }: { file: Models.Document }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -70,6 +70,19 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
     setIsLoading(false);
   };
 
+  const handleRemoveUser = async (email: string) => {
+    const updatedEmails = emails.filter((e) => e !== email);
+
+    const success = await updateFileUsers({
+      fileId: file.$id,
+      emails: updatedEmails,
+      path,
+    });
+
+    if (success) setEmails(updatedEmails);
+    closeAllModals();
+  };
+
   const renderDialogContent = () => {
     if (!action) return null;
 
@@ -89,13 +102,13 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
             />
           )}
           {value === "details" && <FileDetails file={file} />}
-          {/* {value === "share" && (
+          {value === "share" && (
             <ShareInput
               file={file}
               onInputChange={setEmails}
               onRemove={handleRemoveUser}
             />
-          )} */}
+          )}
           {value === "delete" && (
             <p className="delete-confirmation">
               Are you sure you want to delete{` `}
