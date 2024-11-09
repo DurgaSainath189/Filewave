@@ -6,6 +6,7 @@ import React from "react";
 
 const Page = async ({ params }: SearchParamProps) => {
   const type = ((await params)?.type as string) || "";
+
   const files = await getFiles();
 
   return (
