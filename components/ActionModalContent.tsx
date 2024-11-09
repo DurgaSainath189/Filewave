@@ -5,7 +5,7 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import FormattedDateTime from "./ForrmattedDateTime";
+import FormattedDateTime from "./FormattedDateTime";
 
 const ImageThumbnail = ({ file }: { file: Models.Document }) => (
   <div className="file-details-thumbnail">
