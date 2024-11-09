@@ -7,7 +7,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <section className="hidden w-1/2 items-center justify-center bg-brand p-10 lg:flex xl:w-2/5">
         <div className="flex max-h-[800px] max-w-[430px] flex-col justify-center space-y-12">
           <Image
-            src="/logo.png"
+            src="/logo_white.svg"
             alt="filewave_logo"
             width={224}
             height={82}
@@ -28,9 +28,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </section>
 
       <section className="flex flex-1 flex-col items-center bg-white p-4 py-10 lg:justify-center lg:p-10 lg:py-0">
-        <div className="mg-16 lg:hidden">
+        <div className="mt-16 lg:hidden">
           <Image
-            src="/logo2.png"
+            src="/logo_black.svg"
             alt="filewave_logo"
             width={224}
             height={82}
