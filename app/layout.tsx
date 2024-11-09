@@ -1,3 +1,4 @@
+import React from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
@@ -16,12 +17,11 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  // eslint-disable-next-line no-undef
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-poppins } antialiased`}>
+      <body className={`${poppins.variable} } font-poppins antialiased`}>
         {children}
       </body>
     </html>
